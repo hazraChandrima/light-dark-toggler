@@ -2,10 +2,10 @@ var lightToggleIcon = document.getElementById("theme-toggle-light-icon");
 var darkToggleIcon = document.getElementById("theme-toggle-dark-icon");
 
      if (localStorage.getItem('color-theme') === 'dark' || !(('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            lightToggleIcon.classList.remove('hidden');
+            darkToggleIcon.classList.remove('hidden');
         }
         else {
-            darkToggleIcon.classList.remove('hidden');
+            lightToggleIcon.classList.remove('hidden');
         }
 
 
