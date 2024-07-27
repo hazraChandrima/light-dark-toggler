@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light/ Dark mode</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- during page reload, to avoid FOUC -->
+    <script>
+          if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+
+<body class="dark:bg-slate-900">
+
+    <div
+        class="bg-white m-10 w-80 dark:bg-slate-700 dark:bg-opacity-60 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 dark:ring-slate-700/5 shadow-xl">
+        <div>
+            <span class="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
+                <svg class="h-7 w-7" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    stroke="#f7f7f7" transform="rotate(0)">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+                        stroke-width="0.1"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M15.17 11.053L11.18 15.315C10.8416 15.6932 10.3599 15.9119 9.85236 15.9178C9.34487 15.9237 8.85821 15.7162 8.51104 15.346C7.74412 14.5454 7.757 13.2788 8.54004 12.494L13.899 6.763C14.4902 6.10491 15.3315 5.72677 16.2161 5.72163C17.1006 5.71649 17.9463 6.08482 18.545 6.736C19.8222 8.14736 19.8131 10.2995 18.524 11.7L12.842 17.771C12.0334 18.5827 10.9265 19.0261 9.78113 18.9971C8.63575 18.9682 7.55268 18.4695 6.78604 17.618C5.0337 15.6414 5.07705 12.6549 6.88604 10.73L12.253 5"
+                            stroke="#f5f5f5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+            </span>
+        </div>
+        <h3 class="text-slate-900 dark:text-white mt-5 text-base font-medium tracking-tight">Hello. How did you end up
+            here?</h3>
+        <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">
+            I can't think of anything right now, just feeling lonely, that's how my life's supposed to be, I deserve it.
+            My college starts from tomorrow, nothing exciting, just feels like another struggle to be faced with. I
+            really want to study cybersec, but I don't know where to start from, I feel that's the only thing that'll
+            earn me some money and give me satisfaction as well.
+        </p>
+    </div>
+
+    <div class="fixed right-8 top-5">
+        <button onclick="themeToggler()" id="theme-toggle" type="button"
+            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-full text-sm p-2.5">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+        </button>
+
+        <script src="scripts.js"></script>
+    </div>
+
+</body>
+
+</html>
